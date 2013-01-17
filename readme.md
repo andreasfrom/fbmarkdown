@@ -38,6 +38,7 @@ Besides pulling it from the repo, you can download it from my external server:
 
 # License
 Copyright © 2013 Andreas From
+
 Licensed under GNU General Public License version 3.
 
 [md]: http://www.daringfireball.com/projects/markdown/
