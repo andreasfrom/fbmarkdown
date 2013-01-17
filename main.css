@@ -1,0 +1,12 @@
+code.fbmdcss {
+    border-radius: 4px;
+    webkit-border-radius: 4px;
+}
+    
+blockquote.fbmdcss {
+    color: gray;
+}
+
+img.fbmdcss {
+    max-width: 100%;
+}
