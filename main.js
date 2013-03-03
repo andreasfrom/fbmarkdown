@@ -1,5 +1,6 @@
 // fbmarkdown by Andreas From
 
+var Markdown, hljs;
 var converter = Markdown.getSanitizingConverter();
 var smileys = false;
 
@@ -9,7 +10,7 @@ RegExp.quote = function(str) {
 
 converter.hooks.chain("preConversion", function(text) {
     text = text.replace(/(<(br)([^>]+|)>)/ig, "\n\n"); // br to \n\n
-    tmp = document.createElement("p");
+    var tmp = document.createElement("p");
     tmp.innerHTML = text;
     text = tmp.innerText;
     text = text.replace(/(<([^>]+|)>)/ig, ""); // strip all tags
@@ -52,9 +53,9 @@ function unfoldUpdates() {
 
 function handleElements(selector) {
     $(selector).not(".fbmarkdown").each(function() {
-        text = this.innerHTML;
+        var text = this.innerHTML;
         smileys = $(this).find("span.emoticon_text, span.emoticon");
-        html = converter.makeHtml(text);
+        var html = converter.makeHtml(text);
         $(this).html(html);
         $(this).find("code").each(function() {
             this.innerText = this.innerText.replace(/\n\n/g, "\n");
